@@ -38,3 +38,14 @@ Durante o desenvolvimento, usamos IA pontualmente para tirar dúvidas e resolver
 **O que a IA respondeu:** Mostrou o uso de `querySelectorAll` com loop `for` convencional, já que `forEach` em NodeList não funciona em todos os navegadores.
 
 **O que foi feito:** Usamos `for` clássico em todo o projeto exatamente por isso — mais compatível e mais legível para o contexto da disciplina.
+
+### 5. Criação dinâmica de botões do quiz com `createElement`
+
+**O que foi pedido:** Como criar botões de múltipla escolha dinamicamente no HTML a partir de um array de opções.
+
+**O que a IA respondeu:** Explicou o uso de `document.createElement`, definição de propriedades como `className` e `textContent`, e o `appendChild` para adicionar o elemento ao DOM.
+
+**O que foi feito:** Aplicamos essa técnica na função `mostrarPergunta()` do quiz. A lógica de verificação de resposta, feedback colorido e exibição do resultado foram desenvolvidas pela equipe.
+
+
+
