@@ -22,3 +22,19 @@ Durante o desenvolvimento, usamos IA pontualmente para tirar dúvidas e resolver
 **O que a IA respondeu:** Explicou os métodos `classList.add()`, `classList.remove()` e `classList.toggle()`, com exemplos simples de uso.
 
 **O que foi feito:** Usamos `remove` e `add` separadamente (sem `toggle`) para ter controle manual dos três temas. O código final foi escrito pela equipe.
+
+### 3. Slideshow automático com `setInterval`
+
+**O que foi pedido:** Como fazer uma imagem trocar automaticamente a cada X segundos em JavaScript.
+
+**O que a IA respondeu:** Apresentou o uso de `setInterval` e `clearInterval` para controlar o timer do slideshow.
+
+**O que foi feito:** Aproveitamos a lógica explicada e adaptamos para nossa estrutura com botões de seta e dots de navegação. O reinício do timer ao clicar nos botões foi uma solução nossa.
+
+### 4. Como usar `querySelectorAll` para percorrer elementos
+
+**O que foi pedido:** Como percorrer múltiplos elementos HTML ao mesmo tempo com JavaScript (sem jQuery).
+
+**O que a IA respondeu:** Mostrou o uso de `querySelectorAll` com loop `for` convencional, já que `forEach` em NodeList não funciona em todos os navegadores.
+
+**O que foi feito:** Usamos `for` clássico em todo o projeto exatamente por isso — mais compatível e mais legível para o contexto da disciplina.
