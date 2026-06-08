@@ -38,5 +38,49 @@ function mudarTema(tema) {
   for (var i = 0; i < botoes.length; i++) {
     botoes[i].classList.remove('ativo');
   }
+
+  var indiceAtual = 0;                                     
+var listaDeslides = document.querySelectorAll('.slide');  
+var listaDots = document.querySelectorAll('.dot');     
+var timerSlide;                                          
+
+function mostrarSlide(indice) {
+
+  if (indice >= listaDeslides.length) { indice = 0; }
+  if (indice < 0) { indice = listaDeslides.length - 1; }
+
+  indiceAtual = indice;
+
+  for (var i = 0; i < listaDeslides.length; i++) {
+    listaDeslides[i].classList.remove('ativo');
+    listaDots[i].classList.remove('ativo');
+  }
+
+  listaDeslides[indiceAtual].classList.add('ativo');
+  listaDots[indiceAtual].classList.add('ativo');
+}
+
+function mudarSlide(direcao) {
+  mostrarSlide(indiceAtual + direcao);
+  resetarTimer(); 
+}
+
+function irParaSlide(indice) {
+  mostrarSlide(indice);
+  resetarTimer();
+}
+
+function iniciarTimer() {
+  timerSlide = setInterval(function () {
+    mostrarSlide(indiceAtual + 1);
+  }, 5000);
+}
+
+function resetarTimer() {
+  clearInterval(timerSlide);
+  iniciarTimer();
+}
+
+iniciarTimer();
   document.querySelector('.tema-' + tema).classList.add('ativo');
 }
