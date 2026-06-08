@@ -283,5 +283,77 @@ function reiniciarQuiz() {
 }
 
 iniciarQuiz();
+
+function enviarFormulario(evento) {
+  evento.preventDefault(); 
+
+  var formularioValido = true;
+
+  var campos = ['nome', 'email', 'assunto', 'mensagem'];
+  for (var i = 0; i < campos.length; i++) {
+    var campo = document.getElementById('f-' + campos[i]);
+    var erro = document.getElementById('erro-' + campos[i]);
+    campo.classList.remove('campo-erro');
+    erro.textContent = '';
+  }
+  document.getElementById('erro-aceite').textContent = '';
+
+  var campoNome = document.getElementById('f-nome');
+  if (campoNome.value.trim() === '') {
+    document.getElementById('erro-nome').textContent = 'Por favor, informe seu nome.';
+    campoNome.classList.add('campo-erro');
+    formularioValido = false;
+  } else if (campoNome.value.trim().length < 3) {
+    document.getElementById('erro-nome').textContent = 'O nome precisa ter pelo menos 3 letras.';
+    campoNome.classList.add('campo-erro');
+    formularioValido = false;
+  }
+
+  var campoEmail = document.getElementById('f-email');
+  var emailDigitado = campoEmail.value.trim();
+  var emailValido = emailDigitado.indexOf('@') > 0 && emailDigitado.indexOf('.') > 0;
+  if (emailDigitado === '') {
+    document.getElementById('erro-email').textContent = 'Por favor, informe seu e-mail.';
+    campoEmail.classList.add('campo-erro');
+    formularioValido = false;
+  } else if (!emailValido) {
+    document.getElementById('erro-email').textContent = 'Digite um e-mail válido (ex: nome@email.com).';
+    campoEmail.classList.add('campo-erro');
+    formularioValido = false;
+  }
+
+  var campoAssunto = document.getElementById('f-assunto');
+  if (campoAssunto.value === '') {
+    document.getElementById('erro-assunto').textContent = 'Selecione um assunto.';
+    campoAssunto.classList.add('campo-erro');
+    formularioValido = false;
+  }
+
+  var campoMensagem = document.getElementById('f-mensagem');
+  if (campoMensagem.value.trim() === '') {
+    document.getElementById('erro-mensagem').textContent = 'Escreva sua mensagem antes de enviar.';
+    campoMensagem.classList.add('campo-erro');
+    formularioValido = false;
+  } else if (campoMensagem.value.trim().length < 10) {
+    document.getElementById('erro-mensagem').textContent = 'Sua mensagem está muito curta (mínimo 10 caracteres).';
+    campoMensagem.classList.add('campo-erro');
+    formularioValido = false;
+  }
+
+  var campoAceite = document.getElementById('f-aceite');
+  if (!campoAceite.checked) {
+    document.getElementById('erro-aceite').textContent = 'Você precisa marcar essa opção para enviar.';
+    formularioValido = false;
+  }
+
+  if (formularioValido) {
+    var mensagemSucesso = document.getElementById('form-sucesso');
+    mensagemSucesso.style.display = 'flex';
+    document.getElementById('form-contato').reset();
+    setTimeout(function () {
+      mensagemSucesso.style.display = 'none';
+    }, 5000);
+  }
+}
   document.querySelector('.tema-' + tema).classList.add('ativo');
 }
