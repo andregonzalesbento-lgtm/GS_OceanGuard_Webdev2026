@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OceanGuard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Mulish:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-marca">
+      <img src="images/logo.png" alt="Logo OceanGuard" class="nav-logo">
+      <span class="nav-nome">OCEANGUARD</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#problema">Problema</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#publico">Público-alvo</a></li>
+      <li><a href="#slideshow">Galeria</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <div class="tema-barra">
+      <span class="tema-label">Tema:</span>
+      <button class="tema-btn tema-azul ativo" onclick="mudarTema('azul')">
+        <i class="fa-solid fa-water"></i> <span>Oceano</span>
+      </button>
+      <button class="tema-btn tema-verde" onclick="mudarTema('verde')">
+        <i class="fa-solid fa-leaf"></i> <span>Natureza</span>
+      </button>
+      <button class="tema-btn tema-escuro" onclick="mudarTema('escuro')">
+        <i class="fa-solid fa-moon"></i> <span>Noite</span>
+      </button>
+    </div>
+    <a href="#problema" class="nav-botao">Explorar</a>
+  </nav>
+
+  <section class="hero">
+    <img src="images/logo.png" alt="Logo OceanGuard animada" class="hero-logo">
+    <div class="hero-tag">
+      <span class="ponto-piscando"></span>
+      Monitoramento satelital em tempo real
+    </div>
+    <h1 class="hero-titulo">
+      A inteligência dos satélites<br>
+      na mão de quem <span class="destaque">vive do oceano</span>
+    </h1>
+    <p class="hero-subtitulo">
+      Plataforma brasileira que transforma dados espaciais em alertas simples,<br>
+      em português, para pescadores e comunidades costeiras.
+    </p>
+    <div class="hero-botoes">
+      <a href="#problema" class="btn-cheio">Conheça o projeto</a>
+      <a href="#quiz" class="btn-contorno">Fazer o quiz</a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><i class="fa-solid fa-satellite"></i> <span>NASA · ESA · NOAA</span></div>
+      <div class="badge"><i class="fa-solid fa-robot"></i> <span>Inteligência Artificial</span></div>
+      <div class="badge"><i class="fa-solid fa-mobile-screen-button"></i> <span>Mobile-first</span></div>
+      <div class="badge"><i class="fa-solid fa-satellite-dish"></i> <span>Funciona offline</span></div>
+    </div>
+  </section>
+
+  <section id="problema" class="secao fundo-escuro">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <span class="secao-numero">01</span>
+        <span class="secao-label">Problema</span>
+        <h2 class="secao-titulo">O oceano é monitorado<br>mas não para TODOS</h2>
+      </div>
+      <div class="dois-lados">
+        <div class="lado-texto">
+          <p class="paragrafo">
+            Mais de 80% dos oceanos não são monitorados de forma acessível
+            para pescadores e comunidades costeiras.
+          </p>
+          <p class="paragrafo">
+            Dados satelitais existem, mas ficam presos em plataformas técnicas,
+            em inglês, inacessíveis para quem vive do mar.
+          </p>
+          <div class="stats">
+            <div class="stat-card">
+              <span class="stat-numero">80%</span>
+              <span class="stat-desc">do oceano sem monitoramento acessível</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-numero">0</span>
+              <span class="stat-desc">plataformas em português com dados satelitais</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-numero">103</span>
+              <span class="stat-desc">missões submarinas sem dados públicos</span>
+            </div>
+          </div>
+        </div>
+        <div class="caixa-lista">
+          <div class="lista-item">
+            <span class="lista-icone"><i class="fa-solid fa-temperature-high"></i></span>
+            <div>
+              <strong>Temperatura oceânica</strong>
+              <p>Alterações térmicas afetam a pesca sem alertar os pescadores</p>
+            </div>
+          </div>
+          <div class="lista-item">
+            <span class="lista-icone"><i class="fa-solid fa-oil-can"></i></span>
+            <div>
+              <strong>Manchas de óleo</strong>
+              <p>Poluição detectável por satélite, invisível para quem está no mar</p>
+            </div>
+          </div>
+          <div class="lista-item">
+            <span class="lista-icone"><i class="fa-solid fa-fish"></i></span>
+            <div>
+              <strong>Mudanças na fauna</strong>
+              <p>Alterações no ecossistema sem monitoramento acessível</p>
+            </div>
+          </div>
+          <div class="lista-item">
+            <span class="lista-icone"><i class="fa-solid fa-ship"></i></span>
+            <div>
+              <strong>Pesca ilegal</strong>
+              <p>Embarcações sem sinal AIS ativo passam sem fiscalização</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnologia" class="secao">
+    <div class="container">
+      <div class="secao-cabecalho centralizado">
+        <span class="secao-numero">02</span>
+        <span class="secao-label">Tecnologia</span>
+        <h2 class="secao-titulo">Engenharia espacial a serviço do oceano</h2>
+        <p class="paragrafo">
+          OceanGuard integra satélites da NASA, ESA, INPE e NOAA com
+          Inteligência Artificial para processar dados ambientais.
+        </p>
+        <p class="paragrafo">
+          A plataforma usa IoT, Edge Computing e sensoriamento remoto
+          para monitorar o oceano em tempo real.
+        </p>
+      </div>
