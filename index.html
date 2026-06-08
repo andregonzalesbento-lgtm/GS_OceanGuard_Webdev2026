@@ -448,3 +448,146 @@
             </div>
           </div>
         </div>
+        <div class="slide">
+          <div class="slide-imagem slide-3">
+            <div class="slide-overlay">
+              <h3>Comunidades Costeiras</h3>
+              <p>Mais de 600 milhões de pessoas vivem a menos de 10km da costa</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="slide-btn slide-anterior" onclick="mudarSlide(-1)">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slide-btn slide-proximo" onclick="mudarSlide(1)">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="slide-dots">
+          <span class="dot ativo" onclick="irParaSlide(0)"></span>
+          <span class="dot" onclick="irParaSlide(1)"></span>
+          <span class="dot" onclick="irParaSlide(2)"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="secao">
+    <div class="container">
+      <div class="secao-cabecalho centralizado">
+        <span class="secao-numero">08</span>
+        <span class="secao-label">Quiz</span>
+        <h2 class="secao-titulo">Teste seus conhecimentos sobre os oceanos</h2>
+        <p class="paragrafo">10 perguntas sobre o oceano, meio ambiente e a missão do OceanGuard.</p>
+      </div>
+
+      <div class="quiz-container" id="quiz-container">
+        <div class="quiz-progresso">
+          <div class="quiz-barra-fundo">
+            <div class="quiz-barra-progresso" id="quiz-barra"></div>
+          </div>
+          <span class="quiz-contador" id="quiz-contador">Pergunta 1 de 10</span>
+        </div>
+
+        <div class="quiz-pergunta-area" id="quiz-pergunta-area">
+          <h3 class="quiz-pergunta" id="quiz-pergunta"></h3>
+          <div class="quiz-opcoes" id="quiz-opcoes"></div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+          <button class="btn-cheio quiz-proximo" id="quiz-proximo" onclick="proximaPergunta()" style="display:none">
+            Próxima <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="quiz-resultado" id="quiz-resultado" style="display:none">
+          <div class="resultado-icone" id="resultado-icone"></div>
+          <h3 id="resultado-titulo"></h3>
+          <p class="resultado-pontos" id="resultado-pontos"></p>
+          <p class="resultado-msg" id="resultado-msg"></p>
+          <button class="btn-cheio" onclick="reiniciarQuiz()">
+            <i class="fa-solid fa-rotate-right"></i> Jogar novamente
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="secao fundo-escuro">
+    <div class="container">
+      <div class="secao-cabecalho centralizado">
+        <span class="secao-numero">09</span>
+        <span class="secao-label">Contato</span>
+        <h2 class="secao-titulo">Fale com a equipe OceanGuard</h2>
+        <p class="paragrafo">Tem uma sugestão, parceria ou quer saber mais? Envie sua mensagem.</p>
+      </div>
+
+      <form class="formulario" id="form-contato" onsubmit="enviarFormulario(event)">
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label for="f-nome">Nome completo *</label>
+            <input type="text" id="f-nome" placeholder="Seu nome">
+            <span class="form-erro" id="erro-nome"></span>
+          </div>
+          <div class="form-grupo">
+            <label for="f-email">E-mail *</label>
+            <input type="email" id="f-email" placeholder="seu@email.com">
+            <span class="form-erro" id="erro-email"></span>
+          </div>
+        </div>
+        <div class="form-grupo">
+          <label for="f-assunto">Assunto *</label>
+          <select id="f-assunto">
+            <option value="">Selecione um assunto</option>
+            <option value="parceria">Parceria institucional</option>
+            <option value="imprensa">Imprensa</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="outro">Outro</option>
+          </select>
+          <span class="form-erro" id="erro-assunto"></span>
+        </div>
+        <div class="form-grupo">
+          <label for="f-mensagem">Mensagem *</label>
+          <textarea id="f-mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+          <span class="form-erro" id="erro-mensagem"></span>
+        </div>
+        <div class="form-grupo form-check">
+          <label class="check-label">
+            <input type="checkbox" id="f-aceite">
+            <span>Concordo em receber comunicações do OceanGuard *</span>
+          </label>
+          <span class="form-erro" id="erro-aceite"></span>
+        </div>
+        <div class="form-acoes">
+          <button type="submit" class="btn-cheio">
+            <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
+          </button>
+        </div>
+        <div class="form-sucesso" id="form-sucesso" style="display:none">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape-marca">
+      <img src="images/logo.png" alt="Logo OceanGuard rodapé" class="rodape-logo">
+      <div>
+        <p class="rodape-nome">OCEANGUARD</p>
+        <p class="rodape-slogan">Tecnologia espacial para o oceano brasileiro</p>
+      </div>
+    </div>
+    <div class="rodape-equipe">
+      <p class="rodape-titulo-equipe">Equipe OceanGuard — FIAP 2026 - Global Solution</p>
+      <p>André Gonzales Bento — RM 568928</p>
+      <p>Isabella Rodrigues Afonso — RM 572023</p>
+      <p>Nicholas Franco Vidal — RM 569953</p>
+      <p>Richard Henrique Dias dos Santos — RM 569344</p>
+      <p>Samuel Kayto Takiuchi — RM 571126</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
