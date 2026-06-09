@@ -199,6 +199,7 @@ body {
   animation: piscar 1.5s infinite;
 }
 @keyframes piscar { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
 .hero-titulo {
   font-family: var(--fonte-titulo);
   font-size: 3.2rem;
@@ -298,7 +299,8 @@ body {
   font-family: var(--fonte-titulo);
   font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 3px;text-transform: uppercase;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   margin-bottom: 12px;
 }
 .secao-titulo {
@@ -598,13 +600,57 @@ body {
   width: 8px; height: 8px; border-radius: 50%;
   background-color: rgba(255,255,255,0.4);
   cursor: pointer; transition: background-color 0.2s;
-}n branch inclusão-css
-Your branch is up to date with 'origin/inclusão-css'.
+}
+.dot.ativo { background-color: var(--ciano); }
 
-nothing to commit, working tree clean
-PS D:\WEB DEV\GS_OceanGuard_Webdev2026> git commit -m "formulario adicionado"
-On branch inclusão-css
-Your branch is up to date with 'origin/inclusão-css'.
+.quiz-container {
+  max-width: 720px; margin: 0 auto;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-borda);
+  border-radius: 16px; padding: 36px;
+}
+.quiz-progresso { margin-bottom: 28px; }
+.quiz-barra-fundo {
+  height: 6px; background-color: var(--card-borda);
+  border-radius: 3px; margin-bottom: 10px; overflow: hidden;
+}
+.quiz-barra-progresso {
+  height: 100%; background-color: var(--ciano);
+  border-radius: 3px; transition: width 0.4s ease; width: 10%;
+}
+.quiz-contador {
+  font-family: var(--fonte-titulo); font-size: 0.72rem;
+  color: var(--cinza); letter-spacing: 1px; text-transform: uppercase;
+}
+.quiz-pergunta {
+  font-family: var(--fonte-titulo); font-size: 1.2rem; font-weight: 700;
+  line-height: 1.4; margin-bottom: 24px; color: var(--branco);
+}
+.quiz-opcoes { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.quiz-opcao {
+  background-color: var(--azul-escuro);
+  border: 1px solid var(--card-borda);
+  border-radius: 10px; padding: 14px 18px;
+  text-align: left; color: var(--cinza-claro);
+  font-family: var(--fonte-corpo); font-size: 0.9rem;
+  cursor: pointer; transition: border-color 0.2s, background-color 0.2s;
+}
+.quiz-opcao:hover:not(:disabled) { border-color: var(--ciano); color: var(--branco); }
+.quiz-opcao.correta { border-color: #22c55e; background-color: rgba(34,197,94,0.12); color: #86efac; }
+.quiz-opcao.errada  { border-color: #ef4444; background-color: rgba(239,68,68,0.12);  color: #fca5a5; }
+.quiz-opcao:disabled { cursor: not-allowed; }
+.quiz-feedback { font-size: 0.88rem; line-height: 1.5; min-height: 24px; margin-bottom: 16px; color: var(--cinza-claro); }
+.quiz-proximo { margin-top: 8px; }
 
-nothing to commit, working tree clean
-PS D:\WEB DEV\GS_OceanGuard_Webdev2026> 
+.quiz-resultado { text-align: center; padding: 20px 0; }
+.resultado-icone { font-size: 4rem; margin-bottom: 20px; }
+.quiz-resultado h3 { font-family: var(--fonte-titulo); font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+.resultado-pontos { font-family: var(--fonte-titulo); font-size: 3rem; font-weight: 700; color: var(--ciano); margin-bottom: 12px; }
+.resultado-msg { font-size: 0.95rem; color: var(--cinza-claro); line-height: 1.6; max-width: 400px; margin: 0 auto 28px; }
+
+.formulario {
+  max-width: 720px; margin: 0 auto;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-borda);
+  border-radius: 16px; padding: 36px;
+}
