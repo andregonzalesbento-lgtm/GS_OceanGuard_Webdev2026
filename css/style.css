@@ -1,0 +1,201 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+ul { list-style: none; }
+a { text-decoration: none; }
+button { cursor: pointer; border: none; }
+img { display: block; max-width: 100%; }
+
+:root {
+  --azul-escuro: #050e1d;
+  --azul-medio:  #091529;
+  --ciano:       #00c6d4;
+  --branco:      #eef4ff;
+  --cinza:       #8ba8c8;
+  --cinza-claro: #c5d8ee;
+  --dourado:     #e8c06a;
+  --card-bg:     #0f2041;
+  --card-borda:  #1a3d6e;
+  --fonte-titulo: 'Josefin Sans', sans-serif;
+  --fonte-corpo:  'Mulish', sans-serif;
+}
+
+body.tema-verde {
+  --azul-escuro: #061a0e;
+  --azul-medio:  #0a2414;
+  --ciano:       #00d4a0;
+  --branco:      #efffef;
+  --cinza:       #7ab89a;
+  --cinza-claro: #b8ddc8;
+  --dourado:     #e8c06a;
+  --card-bg:     #0d2e1a;
+  --card-borda:  #1a5e38;
+}
+
+body.tema-escuro {
+  --azul-escuro: #0a0a0a;
+  --azul-medio:  #111111;
+  --ciano:       #a78bfa;
+  --branco:      #f1f0ff;
+  --cinza:       #7b7a9a;
+  --cinza-claro: #b8b7d8;
+  --dourado:     #fbbf24;
+  --card-bg:     #1a1a2e;
+  --card-borda:  #2d2d50;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  transition: background-color 0.4s, color 0.4s;
+}
+.container { max-width: 1100px; margin: 0 auto; }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 64px;
+  background-color: var(--azul-escuro);
+  border-bottom: 1px solid var(--card-borda);
+  transition: background-color 0.4s, box-shadow 0.3s;
+  gap: 16px;
+}
+
+.nav-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.nav-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.nav-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--branco);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+.nav-links a {
+  color: var(--cinza);
+  font-family: var(--fonte-titulo);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--ciano); }
+
+.tema-barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.tema-label {
+  font-family: var(--fonte-titulo);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cinza);
+  white-space: nowrap;
+}
+.tema-btn {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-borda);
+  color: var(--cinza-claro);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--fonte-titulo);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.tema-btn.ativo,
+.tema-btn:hover {
+  background-color: var(--ciano);
+  border-color: var(--ciano);
+  color: var(--azul-escuro);
+}
+
+.nav-botao {
+  background-color: var(--ciano);
+  color: var(--azul-escuro);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.nav-botao:hover { opacity: 0.85; }
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  background-color: var(--azul-medio);
+}
+.hero-logo {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--card-borda);
+}
+.hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--ciano);
+  color: var(--ciano);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-family: var(--fonte-titulo);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.ponto-piscando {
+  width: 6px; height: 6px;
+  background-color: var(--ciano);
+  border-radius: 50%;
+  animation: piscar 1.5s infinite;
+}
+@keyframes piscar { 0%,100%{opacity:1} 50%{opacity:0.2} }
